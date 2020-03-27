@@ -17,8 +17,8 @@
         <ImageView
             android:id="@+id/ivCountryFlag"
             android:layout_width="30sp"
-            android:layout_height="80sp"
-            android:layout_weight="30"
+            android:layout_height="70sp"
+            android:layout_weight="25"
             android:paddingLeft="5sp"
             android:paddingTop="5sp"
             android:paddingRight="5sp"

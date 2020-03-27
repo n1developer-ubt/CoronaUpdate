@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:theme="@style/light"
+        tools:context=".MainActivity"
+        android:id="@+id/main_activity">
+
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnCountry"
+                android:layout_width="50sp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@android:color/white"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/pk" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="156dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_red_light"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                android:gravity="center"
+                android:text="Live"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:fontFamily="sans-serif-medium" />
+
+            <Switch
+                android:id="@+id/swtChangeTheme"
+                style="@style/SCBSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Light"
+                android:textCursorDrawable="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:theme="@style/SCBSwitch" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="1dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBar">
+
+            <TextView
+                android:id="@+id/tvMain"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="Corona Virus Counter"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:fontFamily="serif" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="33.33"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTotalNewCasesNew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3sp"
+                        android:gravity="center_vertical"
+                        android:text="308+"
+                        android:textColor="@color/colorCases"
+                        android:textDirection="rtl" />
+
+                    <TextView
+                        android:id="@+id/tvTotalCases"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3sp"
+                        android:layout_marginBottom="15sp"
+                        android:gravity="center_vertical"
+                        android:text="308,609"
+                        android:textColor="@color/colorCases"
+                        android:textDirection="rtl"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tvCasesLbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Cases"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="1dp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorSpacer" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="33.33"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTotalNewDeathsNew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3sp"
+                        android:gravity="center_vertical"
+                        android:text="43+"
+                        android:textColor="@color/colorDeath"
+                        android:textDirection="rtl" />
+
+                    <TextView
+                        android:id="@+id/tvTotalDeaths"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3sp"
+                        android:layout_marginBottom="15sp"
+                        android:gravity="center_vertical"
+                        android:text="13,071"
+                        android:textColor="@color/colorDeath"
+                        android:textDirection="rtl"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tvDeathsLbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Deaths"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="1dp"
+                    android:layout_height="80sp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorSpacer" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="33.33"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTotalNewRecoveredNew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="1008+"
+                        android:textColor="@color/colorRecovered"
+                        android:textDirection="rtl" />
+
+                    <TextView
+                        android:id="@+id/tvTotalRecovered"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15sp"
+                        android:gravity="center_vertical"
+                        android:text="95,839"
+                        android:textColor="@color/colorRecovered"
+                        android:textDirection="rtl"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tvRecoveredLbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Recovered"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="10sp"
+                android:background="@color/colorSpacer" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="10sp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivSelectedCountryFlag"
+                    android:layout_width="158dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/pk" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvSelectedCountryName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pakistan"
+                        android:textColor="@android:color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="33.33"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvSelectedCountryCasesLbl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Cases"
+                                android:textColor="@color/colorLbl"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tvCountryCases"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:shadowColor="@color/colorCases" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view6"
+                            android:layout_width="1sp"
+                            android:layout_height="30sp"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginRight="5sp"
+                            android:background="@color/colorSpacer" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="33.33"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvSelectedCountryDeathsLbl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Deaths"
+                                android:textColor="@color/colorLbl"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tvCountryDeaths"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:shadowColor="@color/colorDeath" />
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view7"
+                            android:layout_width="1sp"
+                            android:layout_height="30sp"
+                            android:layout_marginLeft="5sp"
+                            android:layout_marginRight="5sp"
+                            android:background="@color/colorSpacer" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="33.33"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvSelectedCountryRecoveredLbl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Recovered"
+                                android:textColor="@color/colorLbl"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/tvCountryRecovered"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:shadowColor="@color/colorRecovered" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="5sp"
+                android:background="@color/colorSpacer" />
+
+            <LinearLayout
+                android:id="@+id/lytCountries"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30sp"
+                android:background="@color/colorLightWhite"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lytFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5sp"
+                    android:background="@color/colorLightWhite"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvOtherCountriesLbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorLightWhite"
+                        android:gravity="center"
+                        android:text="Other Countries"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/lytActions"
+                        android:layout_width="236dp"
+                        android:layout_height="25sp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorLightWhite"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edSearch"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="10sp"
+                            android:layout_weight="60"
+                            android:background="@drawable/rounded"
+                            android:ems="10"
+                            android:hint="@android:string/search_go"
+                            android:inputType="textPersonName"
+                            android:textColor="@color/light" />
+
+                        <Spinner
+                            android:id="@+id/spSort"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="40"
+                            android:background="@drawable/spinner_light" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lvCountriesData"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginRight="10sp"
+                    android:layout_marginBottom="10sp">
+
+                </ListView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/2247696110"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
